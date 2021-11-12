@@ -8,7 +8,33 @@ Stampare all’interno di una lista, un item per ogni todo.
 Se la proprietà `done` è uguale a `true`, visualizzare il testo del todo ~~sbarrato~~./** */
 
 const app = new Vue ({
-  
+  el: '#app',
+
+  data:{
+    toDoList: [
+      {
+        text: 'comprare cibo gatti',
+        done: false
+      },
+      {
+        text: 'chiamare marilù',
+        done: false
+      },
+      {
+        text: 'ritirare zaino',
+        done: true
+      },
+      {
+        text: 'fare torta',
+        done: false
+      }
+    ],
+
+
+
+
+
+  }
 
 
 

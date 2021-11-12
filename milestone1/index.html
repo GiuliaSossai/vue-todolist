@@ -14,7 +14,7 @@
 <body>
   
   <div id="app">
-    
+
     <div class="container">
       <div class="logo-box">
         <div class="logo">
@@ -30,21 +30,16 @@
   
         <button>aggiungi</button>
       </div>
-  
+      
+      <!-- visualizzo classe disabled solo se item ha la variabile done = true -->
       <ul>
-        <li class="done">
-          <span>compra pappa mao</span>
+        <li 
+          v-for="item in toDoList"
+          :class="{disabled: item.done}"
+        >
+          <span>{{item.text}}</span>
           <i class="fas fa-trash"></i>
-        </li>
-        <li>
-          <span>compra pappa mao</span>
-          <i class="fas fa-trash"></i>
-        </li>
-        <li>
-          <span>compra pappa mao</span>
-          <i class="fas fa-trash"></i>
-        </li>
-        
+        </li> 
       </ul> 
     </div>
   
