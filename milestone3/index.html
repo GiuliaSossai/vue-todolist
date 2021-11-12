@@ -27,6 +27,7 @@
 
       <h3 v-if="msgErrore">scrivi almeno 3 caratteri</h3>
       
+      <!-- bonus1: quando premo enter aggiungo il nuovo item alla lista-->
       <div class="input-box">
         <input 
           type="text" 
@@ -39,13 +40,16 @@
       </div>
       
       <!-- visualizzo classe disabled solo se item ha la variabile done = true -->
+      <!-- bonus2: al click su span il valore di "done" cambia -->
       <ul>
         <li 
           v-for="item in toDoList"
           :class="{disabled: item.done}"
         >
           <span 
-            :class="{disabled: item.done}">
+            :class="{disabled: item.done}"
+            @click="item.done = !item.done"
+          >
             {{item.text}}
           </span>
           <i 
