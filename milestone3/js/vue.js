@@ -27,10 +27,8 @@ const app = new Vue ({
       }
     ],
 
-    nuovoItem: {
-      text: '',
-      done: false
-    },  
+    nuovoItem: '',
+    msgErrore: false 
   },
 
   methods: {
@@ -39,35 +37,21 @@ const app = new Vue ({
     },
 
     inserisciItem(){
-      //dentro array pusho tutto il nuovo item
-      this.toDoList.push(this.nuovoItem);
-      console.log('hai inserito');
+      //check validità nuovo item
+       if(this.nuovoItem.length < 3){
+          this.msgErrore = true;
+       } else {
+        //dentro array pusho il nuovoItem che è stringa e quindi gli do il riferimento che volgio io, ovvero che quella stringa sia la proprietà text
+        this.toDoList.push({text : this.nuovoItem});
+        console.log('hai inserito');
 
-      //resetto input
-      this.nuovoItem.text = '';
+        //resetto input
+        this.nuovoItem = '';
+      };
+
+      
+      
     }
   }
-  
+
 });
-
-
-
-
-  
-
-//     inserisciNuovoItem(){
-//       console.log('hai inserito nuovo item')
-//       //prima faccio controllo validità dell'input
-//       //if(this.nuovoItem.text.length < 2){
-//         //this.mgsErrore = true
-//       //} else {
-//         //pusho il nuovo ToDo nell'array usando v-model
-//         //this.toDoList.push(this.nuovoItem.text);
-
-//         //resetto il text di input
-//         //this.nuovoItem.text = '';
-//       //}  
-//     }
-//   }
-
-// });

@@ -32,10 +32,16 @@ body{
   margin-right: 30px;
 }
 
-.text {
+.text-title {
   line-height: 80px;
   font-size: 30px;
   color: white;
+}
+
+h3 {
+  color: #fff;
+  font-size: 18px;
+  padding-bottom: 20px;
 }
 
 input, button {
