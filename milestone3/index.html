@@ -26,7 +26,12 @@
       </div>
       
       <div class="input-box">
-        <input type="text" placeholder="cosa devo fare?">
+        <input 
+          type="text" 
+          placeholder="cosa devo fare?" 
+          v-model="nuovoItem.text" 
+          @keyup.enter="inserisciItem"
+        >
   
         <button>aggiungi</button>
       </div>
