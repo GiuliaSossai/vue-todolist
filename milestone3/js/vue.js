@@ -30,23 +30,24 @@ const app = new Vue ({
     nuovoItem: {
       text: '',
       done: false
+    },  
+  },
+
+  methods: {
+    togliItem(index){
+      this.toDoList.splice(index, 1);
     },
 
-    methods: {
-      togliItem(index){
-        this.toDoList.splice(index, 1);
-      },
+    inserisciItem(){
+      //dentro array pusho tutto il nuovo item
+      this.toDoList.push(this.nuovoItem);
+      console.log('hai inserito');
 
-      inserisciItem(){
-        //dentro array pusho tutto il nuovo item
-        this.toDoList.push(this.nuovoItem);
-        console.log('hai inserito');
-
-        //resetto input
-        this.nuovoItem.text = '';
-      }
+      //resetto input
+      this.nuovoItem.text = '';
     }
   }
+  
 });
 
 
