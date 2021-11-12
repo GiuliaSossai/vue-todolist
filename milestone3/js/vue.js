@@ -50,7 +50,7 @@ const app = new Vue ({
         }, 2000);
       } else {
         //dentro array pusho il nuovoItem che è stringa e quindi gli do il riferimento che volgio io, ovvero che quella stringa sia la proprietà text
-        this.toDoList.push({text : this.nuovoItem});
+        this.toDoList.push({text : this.nuovoItem, done : false});
         console.log('hai inserito');
 
         //resetto input
