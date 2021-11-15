@@ -32,7 +32,7 @@
         <input 
           type="text" 
           placeholder="cosa devo fare?" 
-          v-model="nuovoItem" 
+          v-model.trim="nuovoItem" 
           @keyup.enter="inserisciItem"
         >
   
@@ -43,7 +43,7 @@
       <!-- bonus2: al click su span il valore di "done" cambia -->
       <ul>
         <li 
-          v-for="item in toDoList"
+          v-for="(item, index) in toDoList"
           :class="{disabled: item.done}"
         >
           <span 

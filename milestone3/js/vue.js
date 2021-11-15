@@ -38,11 +38,17 @@ const app = new Vue ({
 
   methods: {
     togliItem(index){
-      this.toDoList.splice(index, 1);
+      //aggiungo controllo prima di eliminare elemento usando metodo confirm()
+      if(confirm(`sei sicuro di voler eliminare "${this.toDoList[index].text}"?`)){
+        this.toDoList.splice(index, 1);
+      }
+      
     },
 
     inserisciItem(){
       //check validità nuovo item
+      //aggiungo metodo trim per eliminare eventuali spazi bianchi ai lati della stringa: lo posso aggiungere all'origine, direttamente v-model.trim!!
+      // altrimenti dovrei scrivere qui e sotto this.nuovoItem.trim().length
        if(this.nuovoItem.length < 3){
         this.msgErrore = true;
         setTimeout(() => {
@@ -50,6 +56,7 @@ const app = new Vue ({
         }, 2000);
       } else {
         //dentro array pusho il nuovoItem che è stringa e quindi gli do il riferimento che volgio io, ovvero che quella stringa sia la proprietà text
+        //aggiungo trim anche in questo punto altrimenti l'oggetto avrebbe la stringa come l'ho scritta, con gli spazi ovvero scriverei this.nuovoItem.trim()
         this.toDoList.push({text : this.nuovoItem, done : false});
         console.log('hai inserito');
 
